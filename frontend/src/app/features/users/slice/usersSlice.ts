@@ -1,9 +1,9 @@
 // Import necessary modules and types
 import { createAsyncThunk, createSlice, PayloadAction } from "@reduxjs/toolkit";
 import axios from "axios";
-import { RootState } from "../../../store/store";
-import { User } from "../../../types/user";
-import { USER_URL } from "../../../constants/constants";
+import { RootState } from "../../../../store/store";
+import { User } from "../../../../types/user";
+import { USER_URL } from "../../../../constants/constants";
 
 // Define the state interface
 interface UserState {
@@ -55,6 +55,7 @@ const userSlice = createSlice({
 
 // Export a selector to retrieve all users from the state
 export const selectAllUsers = (state: RootState) => state.users.users;
+export const selectUserById = (state: RootState, userId: number) =>
+  state.users.users.find((user) => user.id === userId);
 
-// Export the reducer
 export default userSlice.reducer;

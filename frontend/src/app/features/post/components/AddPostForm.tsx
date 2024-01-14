@@ -1,7 +1,7 @@
 import React, { useState, ChangeEvent, FormEvent } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
-import { selectAllUsers } from "../../users/usersSlice";
+import { selectAllUsers } from "../../users/slice/usersSlice";
 import { addNewPost } from "../slices/postSlice";
 import { AppDispatch } from "../../../../store/store";
 
@@ -61,7 +61,7 @@ const AddPostForm: React.FC<AddPostFormProps> = () => {
   ));
 
   return (
-    <section className="p-4 max-w-md mx-auto bg-white shadow-md rounded-md">
+    <section className="p-4 max-w-md mx-auto bg-white shadow-md rounded-md mt-20">
       <h2 className="text-2xl font-semibold mb-4">Add a New Post</h2>
       <form onSubmit={handleSubmit}>
         <label htmlFor="postTitle" className="block mb-2 text-sm font-medium">

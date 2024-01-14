@@ -2,7 +2,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { useNavigate, useParams } from "react-router-dom";
 import { deletePost, selectPostById, updatePost } from "../slices/postSlice";
 import { AppDispatch, RootState } from "../../../../store/store";
-import { selectAllUsers } from "../../users/usersSlice";
+import { selectAllUsers } from "../../users/slice/usersSlice";
 import { ChangeEvent, FormEvent, useState } from "react";
 
 const EditPostForm = () => {

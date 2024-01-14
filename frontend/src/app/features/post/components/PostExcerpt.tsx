@@ -3,12 +3,16 @@ import PostAuther from "./PostAuther";
 import TimeAgo from "./TimeAgo";
 import ReactionButton from "./ReactionButton";
 import { Link } from "react-router-dom";
+import { useSelector } from "react-redux";
+import { RootState } from "../../../../store/store";
+import { selectPostById } from "../slices/postSlice";
 
 interface PostExcerptProps {
-  post: Post;
+  postId: number;
 }
 
-const PostExcerpt: React.FC<PostExcerptProps> = ({ post }) => {
+const PostExcerpt: React.FC<PostExcerptProps> = ({ postId }) => {
+  const post = useSelector((state: RootState) => selectPostById(state, postId));
   return (
     <article className="mb-4 p-4 border rounded">
       <h3 className="text-xl font-semibold mb-2">{post.title}</h3>
