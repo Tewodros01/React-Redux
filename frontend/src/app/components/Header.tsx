@@ -17,6 +17,11 @@ const Header = () => {
                 Post
               </Link>
             </li>
+            <li>
+              <Link to="/user" className="hover:text-gray-300">
+                Users
+              </Link>
+            </li>
           </ul>
         </nav>
       </div>
